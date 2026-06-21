@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 用户引导页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #fafafa;
+            color: #1e1e1e;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem 3rem;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 4px 20px rgba(0, 0, 0, 0.03);
+            padding: 3rem 2rem;
+        }
+
+        /* ----- hero ----- */
+        .hero {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: #121212;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 480px;
+            margin: 0 auto 1.6rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #3a3a3a;
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- sections ----- */
+        section {
+            margin-bottom: 2.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #ececec;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.2rem 0 0.4rem;
+            color: #2b2b2b;
+        }
+
+        p, li {
+            color: #3e3e3e;
+            margin-bottom: 0.6rem;
+        }
+
+        ul, ol {
+            padding-left: 1.4rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* ----- highlight / list (优势区) ----- */
+        .strength-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .strength-item {
+            background: #f7f7f9;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border-left: 3px solid #d4d4d4;
+        }
+
+        .strength-item strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #111;
+        }
+
+        /* ----- FAQ 摘要 ----- */
+        .faq-summary {
+            background: #f4f4f6;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+        }
+
+        .faq-summary dt {
+            font-weight: 500;
+            margin-top: 0.8rem;
+            margin-bottom: 0.2rem;
+            color: #1e1e1e;
+        }
+
+        .faq-summary dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .faq-summary dd {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            margin-left: 0;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ----- bottom link ----- */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #eaeaea;
+            font-size: 0.95rem;
+            color: #5a5a5a;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+
+        .footer-note a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* ----- 响应式 ----- */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.6rem 2rem;
+            }
+            .page {
+                padding: 2rem 1.2rem;
+                border-radius: 18px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 辅助 */
+        .muted {
+            color: #6f6f6f;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 区 -->
+        <div class="hero">
+            <h1>华体会</h1>
+            <p class="sub">一个面向日常使用与快速识别的信息说明页<br>帮助你判断这个网站是否匹配你的需求</p>
+            <span class="badge">平台简介 · 特点 · 常见疑问</span>
+        </div>
+
+        <!-- 介绍/说明区：从用户想快速识别用途的角度 -->
+        <section>
+            <h2>这个网站是什么</h2>
+            <p>
+                <a href="https://official-pro-huatihui.com">华体会</a> 是一个整合了多种在线工具与资讯的网站。
+                如果你希望快速了解一个平台的定位、功能边界以及常见操作方式，这里提供了一份相对完整的说明。
+                它更像是一个起点——你可以通过它判断是否值得进一步探索。
+            </p>
+            <p>
+                网站目前主要面向中文用户，界面简洁，没有过多的跳转干扰。
+                内容以分类列表和简要介绍为主，便于你在短时间内建立整体印象。
+            </p>
+        </section>
+
+        <!-- 优势区 -->
+        <section>
+            <h2>几点值得留意的特点</h2>
+            <div class="strength-grid">
+                <div class="strength-item">
+                    <strong>信息组织清晰</strong>
+                    <span>主要功能模块按用途分组，入口明确，不需要反复查找。</span>
+                </div>
+                <div class="strength-item">
+                    <strong>更新节奏稳定</strong>
+                    <span>站内说明与相关资源会保持同步，减少过时信息带来的困扰。</span>
+                </div>
+                <div class="strength-item">
+                    <strong>低门槛使用</strong>
+                    <span>无需注册即可浏览大部分内容，操作路径直接，适合想快速验证的用户。</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 说明区：场景 + 提示 -->
+        <section>
+            <h2>常见使用场景</h2>
+            <ul>
+                <li>你想了解某类工具的基本功能，先看介绍再决定是否深入。</li>
+                <li>需要对比不同模块的用途，网站提供了并列的说明条目。</li>
+                <li>偶尔回来查看是否有新增内容或调整，页面结构稳定，容易定位。</li>
+            </ul>
+            <p class="muted" style="margin-top: 0.8rem;">
+                * 提示：部分外部链接会打开新页面，你可以根据自身网络环境访问。
+            </p>
+        </section>
+
+        <!-- FAQ 摘要 -->
+        <section>
+            <h2>一些常见疑问</h2>
+            <dl class="faq-summary">
+                <dt>网站是否需要付费？</dt>
+                <dd>目前的公开内容均可免费浏览，站内没有主动收费提示。</dd>
+
+                <dt>信息可靠吗？</dt>
+                <dd>内容基于公开资料整理，并会定期核对。如果你发现偏差，可以通过站内方式反馈。</dd>
+
+                <dt>移动端体验如何？</dt>
+                <dd>页面做了基础响应式适配，手机浏览时文字和按钮会自动调整大小。</dd>
+
+                <dt>与其它同类网站有何不同？</dt>
+                <dd><a href="https://official-pro-huatihui.com">华体会</a> 更侧重于直接展示核心功能，减少了广告和无关链接的干扰。</dd>
+            </dl>
+        </section>
+
+        <!-- 底部链接 -->
+        <div class="footer-note">
+            <p>
+                若你想进一步了解，可以直接前往
+                <a href="https://official-pro-huatihui.com">华体会</a> 。
+                当前页面仅作为引导和说明，不构成任何承诺或推荐。
+            </p>
+            <p style="margin-top: 0.6rem; font-size: 0.8rem; color: #999;">
+                &copy; 指引页 · 内容仅供参考
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
