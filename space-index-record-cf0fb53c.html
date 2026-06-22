@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 — 资料整理与信息索引 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1622 0%, #1a2a3a 100%);
+            color: #e2e8f0;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+            border-bottom: 4px solid #3b82f6;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 620px;
+            margin: 0.5rem auto 0;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.5rem 1.8rem 4rem;
+        }
+
+        /* 卡片模块 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin: 2.2rem 0 2.8rem;
+        }
+        @media (min-width: 680px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f6;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 0.75rem;
+        }
+        .card p, .card ul {
+            font-size: 0.96rem;
+            color: #334155;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.35rem;
+        }
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+
+        .intro-text {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 1.8rem;
+            margin: 0.8rem 0 2rem;
+            border: 1px solid #eef2f6;
+            font-size: 1rem;
+        }
+        .intro-text strong {
+            color: #0f172a;
+        }
+
+        .highlight-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #94a3b8;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .highlight-link:hover {
+            color: #1e40af;
+            border-bottom-color: #2563eb;
+        }
+
+        .scenario-list {
+            background: #f8fafc;
+            padding: 1.6rem 1.8rem;
+            border-radius: 18px;
+            margin: 2.2rem 0 2.4rem;
+            border-left: 4px solid #3b82f6;
+        }
+        .scenario-list h4 {
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+            font-size: 1.05rem;
+        }
+        .scenario-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .faq-mini {
+            margin-top: 2.8rem;
+            border-top: 1px solid #dce3ec;
+            padding-top: 2rem;
+        }
+        .faq-mini h4 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item .q {
+            font-weight: 600;
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+        .faq-item .a {
+            color: #475569;
+            font-size: 0.94rem;
+            padding-left: 0.2rem;
+        }
+
+        .note-box {
+            background: #f1f5f9;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            color: #475569;
+            margin: 2rem 0 1.2rem;
+            border: 1px solid #e2e8f0;
+        }
+        .note-box a {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.2rem 1.5rem 1.8rem;
+            color: #64748b;
+            font-size: 0.82rem;
+            border-top: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 1.8rem 1rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>华体会 · 信息索引</h1>
+        <p class="tagline">围绕体育、赛事与数据整理，提供结构化的参考资料与使用建议。</p>
+        <span class="badge">产品说明式 · 资料索引</span>
+    </section>
+
+    <!-- 正文区 -->
+    <main class="container">
+
+        <!-- 摘要式介绍 -->
+        <div class="intro-text">
+            <p><strong>华体会</strong> 是一个面向体育信息整合与赛事数据查阅的索引型平台。不同于泛资讯站点，它更侧重于对公开内容进行归类、归档与结构化展示，帮助使用者快速定位所需信息模块。平台本身不生成原始数据，而是通过持续整理与链接组织，为浏览者提供相对清晰的资料路径。基于这一逻辑，<a href="https://space-index-hth.com" class="highlight-link">华体会</a> 在内容编排上强调分类粒度与更新节奏，力求在信息过载的环境中提供一种轻量、可追溯的参考方式。</p>
+        </div>
+
+        <!-- 亮点卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>结构化归档</h3>
+                <p>按赛事类别、时间线、参与方等维度划分档案层级，减少信息重复与杂乱。每个条目均标注来源属性，便于回溯验证。</p>
+            </div>
+            <div class="card">
+                <h3>低噪声界面</h3>
+                <p>弱化动态推送与冗余推荐，将注意力集中在目录‑内容‑关联三条主线上。页面布局以信息层级优先，辅助快速扫描。</p>
+            </div>
+            <div class="card">
+                <h3>持续维护</h3>
+                <p>索引库定期按轮次复核，移除失效外部链接，补充新出现的公开资料。维护日志以周为单位记录变动范围。</p>
+            </div>
+            <div class="card">
+                <h3>使用建议</h3>
+                <ul>
+                    <li>优先使用分类筛选而非全文搜索</li>
+                    <li>关注“近期更新”板块获取最新归档</li>
+                    <li>如遇链接不可用，可通过站内报告渠道反馈</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 场景说明 -->
+        <div class="scenario-list">
+            <h4>适用场景举例</h4>
+            <ul>
+                <li><strong>资料梳理</strong> — 需要针对特定联赛或历史赛事整理时间线时，可利用分类索引快速获取条目。</li>
+                <li><strong>信息交叉验证</strong> — 将平台提供的摘要与原始来源对比，辅助判断内容一致性。</li>
+                <li><strong>静态查阅</strong> — 无需频繁刷新，适合作为固定参考页保存或打印。</li>
+                <li><strong>轻度研究</strong> — 研究者或爱好者可基于索引目录进一步检索原始材料。</li>
+            </ul>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="note-box">
+            <strong>关于访问与内容边界</strong>：本平台仅作为信息索引与资料整理工具，所有外部链接均指向公开可访问的第三方内容。平台不持有、不修改、不转述原始信息的具体观点。用户在使用过程中应自行判断链接内容的时效性与准确性。若对某一条目存疑，建议直接对照来源站核实。<br>
+            <span style="display: inline-block; margin-top: 0.4rem;">→ 索引入口：<a href="https://space-index-hth.com">华体会</a> 首页提供完整分类目录。</span>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <h4>常见说明</h4>
+            <div class="faq-item">
+                <span class="q">Q：索引覆盖哪些领域？</span>
+                <span class="a">目前以足球、篮球、网球及综合赛事的历史资料与公开统计为主，后续视维护能力逐步扩展。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">Q：信息多久更新一次？</span>
+                <span class="a">核心索引每周复核一次，辅助链接每两周检查可用性，更新日志同步至站内公告栏。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">Q：能否提交遗漏的条目？</span>
+                <span class="a">站内设有提交入口，经过格式与可靠性审核后纳入索引队列。不保证所有提议均被收录。</span>
+            </div>
+        </div>
+
+        <!-- 再次嵌入链接（自然融入句子） -->
+        <p style="margin-top: 1.6rem; font-size: 0.95rem; color: #475569;">
+            若你正在寻找经过整理的体育信息索引，<a href="https://space-index-hth.com" class="highlight-link">华体会</a> 当前的分类结构或许能提供一条清晰的查阅路径。建议先从左侧导航栏的“赛事归档”入手。
+        </p>
+
+    </main>
+
+    <footer>
+        <p>资料整理 · 信息索引 · 仅作参考 · <a href="https://space-index-hth.com" style="font-weight:500;">华体会</a> 内容持续维护中</p>
+        <p style="margin-top:0.3rem;">© 2025 索引说明页 · 不构成投资或决策依据</p>
+    </footer>
+
+</body>
+</html>
