@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>赏金女王 · 主题知识库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f3f7fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 1.2rem;
+            min-height: 100vh;
+        }
+        .wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* 蓝绿色点缀与卡片系统 */
+        .accent-text {
+            color: #1b7c6c;
+            font-weight: 500;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 8px 20px rgba(0, 40, 30, 0.04);
+            border: 1px solid #dae9e5;
+            transition: border 0.2s ease, box-shadow 0.2s;
+        }
+        .card:hover {
+            border-color: #2aa48e;
+            box-shadow: 0 12px 28px rgba(27, 124, 108, 0.08);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #13493f;
+            letter-spacing: 0.3px;
+        }
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #2b3f4a;
+        }
+        .card ul {
+            padding-left: 1.2rem;
+        }
+        .card ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* 头部 / hero 区 */
+        .hero {
+            padding: 2.5rem 0 1.2rem;
+            border-bottom: 2px solid #c5dfd9;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #103a32;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #3a6a5f;
+            background: #d6ece6;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            margin-left: 0.3rem;
+        }
+        .hero .sub {
+            margin-top: 0.5rem;
+            font-size: 1.05rem;
+            color: #25574b;
+            max-width: 700px;
+        }
+
+        /* 说明区 / 内容区域 */
+        .intro-block {
+            background: #ffffffd9;
+            backdrop-filter: blur(1px);
+            padding: 1.8rem 2rem;
+            border-radius: 32px;
+            margin: 2rem 0 1.5rem;
+            border: 1px solid #bdd9d2;
+            box-shadow: 0 6px 12px rgba(0,30,20,0.02);
+        }
+        .intro-block p {
+            margin-bottom: 1rem;
+        }
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+        .accent-highlight {
+            background: #def2ed;
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            color: #0d4c3e;
+            font-weight: 500;
+        }
+
+        /* 提示区 与相关信息区 */
+        .tip-box {
+            background: #e3f3ef;
+            border-left: 5px solid #1f9e87;
+            padding: 1.2rem 1.5rem;
+            border-radius: 24px;
+            margin: 1.8rem 0;
+        }
+        .tip-box strong {
+            color: #0b463a;
+        }
+
+        .related-section {
+            background: #f0f9f6;
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+            border: 1px solid #b5d5cc;
+        }
+        .related-section h2 {
+            font-size: 1.5rem;
+            color: #124b3f;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            border-bottom: 3px solid #228c78;
+            padding-bottom: 0.2rem;
+        }
+        .related-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+            margin-top: 1.2rem;
+        }
+        .related-items span {
+            background: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid #bcd9d1;
+            color: #174e42;
+        }
+
+        /* faq 摘要 (简洁) */
+        .faq-mini {
+            margin: 1.8rem 0;
+        }
+        .faq-mini details {
+            background: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid #cbe0da;
+            margin-bottom: 0.6rem;
+        }
+        .faq-mini details[open] {
+            border-color: #289982;
+        }
+        .faq-mini summary {
+            font-weight: 600;
+            color: #1b5f51;
+            cursor: pointer;
+            padding: 0.3rem 0;
+        }
+        .faq-mini details p {
+            margin-top: 0.4rem;
+            color: #2f4f47;
+        }
+
+        /* 按钮 / 内联链接尊重要求 */
+        .inline-link {
+            color: #177b69;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #72bba9;
+            font-weight: 500;
+        }
+        .inline-link:hover {
+            color: #0b4a3e;
+            text-decoration-color: #1f7a68;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0 0.8rem;
+            border-top: 1px solid #cfe3dd;
+            font-size: 0.85rem;
+            color: #34665a;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            body { padding: 0.8rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .intro-block { padding: 1.2rem; }
+            .grid-cards { gap: 1rem; }
+            .related-section { padding: 1.2rem; }
+        }
+        @media (min-width: 768px) {
+            .grid-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .grid-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- hero -->
+    <header class="hero">
+        <h1>
+            <span>赏金女王</span>
+            <small>主题知识库</small>
+        </h1>
+        <div class="sub">围绕关键词「赏金女王」整理的内容线索、背景素材与延伸信息</div>
+    </header>
+
+    <!-- 说明区：从主题内容展开 -->
+    <section class="intro-block">
+        <p>
+            “赏金女王”在文化叙事中通常指向以悬赏、狩猎或委托为核心的角色设定，常见于冒险、幻想或历史改编题材。本页集中梳理与这一主题相关的背景资料、概念碎片和观察笔记，帮助快速建立认知框架。
+        </p>
+        <p>
+            在不同作品或社区讨论里，<span class="accent-highlight">赏金女王</span> 的侧重点可能偏向“赏金”的契约机制，或“女王”所代表的领导力与神秘感。这里不定义唯一答案，而是提供可索引的卡片与提示，方便进一步探索。
+        </p>
+        <p>
+            如果你希望了解更完整的设定或参与讨论，可以前往网站 <a href="https://main-portal-bountyqueen.com" class="inline-link">赏金女王</a> 查看最新内容与社区动态。
+        </p>
+    </section>
+
+    <!-- 网格卡片：目录感布局 / 四个不同侧面 -->
+    <div class="grid-cards">
+        <div class="card">
+            <h3>📜 概念源流</h3>
+            <p>赏金制度的历史原型、女王叙事在文学中的变形，以及二者融合的几种常见模式。</p>
+        </div>
+        <div class="card">
+            <h3>⚔️ 角色特征</h3>
+            <p>独立、果断、掌握情报或武力资源；常带有悬赏令、地图、契约等视觉符号。</p>
+        </div>
+        <div class="card">
+            <h3>🌍 场景延伸</h3>
+            <p>港口酒馆、沙漠驿站、王城暗巷、密林营地……场景为赏金任务提供舞台与氛围。</p>
+        </div>
+        <div class="card">
+            <h3>📖 相关线索</h3>
+            <ul>
+                <li>赏金公会 / 委托体系</li>
+                <li>女王之名与统治象征</li>
+                <li>对立势力与中立地带</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示区 -->
+    <aside class="tip-box">
+        <strong>💡 提示</strong><br>
+        本页为信息聚合页，所有内容基于公开素材与常见主题整理。如果你有更具体的设定或想问的问题，建议直接参考 <a href="https://main-portal-bountyqueen.com" class="inline-link">赏金女王</a> 上的版块分类，那里的专题文章与用户整理更加细致。
+    </aside>
+
+    <!-- 相关信息区 -->
+    <section class="related-section">
+        <h2>相关信息</h2>
+        <p style="color: #1d5649; margin: 0.2rem 0 0.5rem;">以下标签与关键词常与“赏金女王”一同出现，可作为扩展阅读方向：</p>
+        <div class="related-items">
+            <span>🏴 悬赏令</span>
+            <span>👑 女王卫队</span>
+            <span>🗺️ 风险航线</span>
+            <span>💰 赏金猎人</span>
+            <span>🕯️ 暗市情报</span>
+            <span>⚖️ 雇佣契约</span>
+            <span>🏰 边境城镇</span>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要（简洁，非完整） -->
+    <div class="faq-mini">
+        <details>
+            <summary>❓ “赏金女王”是一个具体角色吗？</summary>
+            <p>不一定。它可以是某个世界观中的头衔、组织领袖，也可以是玩家或读者对特定人物的俗称。具体含义取决于上下文，建议在网站内搜索相关帖子。</p>
+        </details>
+        <details>
+            <summary>❓ 这个知识库会更新吗？</summary>
+            <p>本页为基础索引，主站的内容会随社区贡献定期调整。你可以将 <a href="https://main-portal-bountyqueen.com" class="inline-link">赏金女王</a> 加入书签以获取最新资料。</p>
+        </details>
+        <details>
+            <summary>❓ 是否有推荐的故事或作品？</summary>
+            <p>范围较广，从冒险小说到策略游戏均有涉及。建议前往主站的“推荐清单”板块，那里有按主题分类的作品列表与简短点评。</p>
+        </details>
+    </div>
+
+    <!-- 最后的脚注 -->
+    <div class="footer-note">
+        整理 · 主题知识库 · 仅供信息参考
+    </div>
+
+</div>
+</body>
+</html>
